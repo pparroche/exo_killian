@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+    app:
+        build: ./app
+        depends_on: 
+            - db
+        ports:
+            - 5000:5000
+        restart: unless-stopped
+
+    db:        
+        image: mysql
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - ./db/:/docker-entrypoint-initdb.d/
+            - mon-volume:/var/lib/mysql/
+        restart: unless-stopped
+
+    db-ui:
+        image: adminer
+        ports:
+            - 8080:8080
+        depends_on:
+            - db
+        restart: unless-stopped
+
+volumes:
+    mon-volume:

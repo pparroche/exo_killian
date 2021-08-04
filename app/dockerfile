@@ -1,0 +1,12 @@
+FROM python
+
+EXPOSE 5000
+
+WORKDIR /usr/src/app
+
+RUN pip install flask
+RUN pip install mysql-connector
+RUN pip install flask_sqlalchemy
+
+COPY app.py ./
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
