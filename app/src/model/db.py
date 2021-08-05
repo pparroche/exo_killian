@@ -8,10 +8,8 @@ class DB(ABC):
         password='root',
         database='mabdd',
         port='3306',
-        auth_plugin='mysql_native_password'
     )
-# commit automatique qd une requête est faite en bdd
-    #conn.autocommit = False
+
 
     @staticmethod
     def connect():

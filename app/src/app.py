@@ -1,5 +1,4 @@
-from flask import Flask, request, jsonify, Response
-import json
+from flask import Flask, request, Response
 import mysql.connector
 from werkzeug.utils import redirect
 from flask.templating import render_template
