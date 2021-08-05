@@ -15,7 +15,7 @@ class QueriesMaBdd():
     
     def add_user(self, utilis):
         self.conn.execute(
-            f"""
-            INSERT INTO utilisateurs (id_utilisateur, nom, prenom, id_adresse) VALUES({utilis.get('id_utilisateur')}, {utilis.get('nom')}', '{utilis.get('prenom')}','{utilis.get('id_adresse')}')
+            """
+            INSERT INTO utilisateurs (id_utilisateur, nom, prenom, id_adresse) VALUES ({int(utilis.get('id_utilisateur'))}, {utilis.get('nom')}', '{utilis.get('prenom')}','{int(utilis.get('id_adresse'))}')
             """
         )

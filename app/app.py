@@ -20,9 +20,8 @@ def all_users():
 @app.route('/add_user_template/')
 def add_user_template():
     return render_template('add_user.html')
-
-
-@app.route('/insert_user', methods=['POST', 'GET'])
+    
+@app.route('/insert_user/', methods=['POST', 'GET'])
 def insert_user():
     data = request.form
     QueriesMaBdd().add_user(data)
