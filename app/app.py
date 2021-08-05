@@ -11,7 +11,8 @@ def getMysqlConnection():
         'password': 'root',
         'host': 'db',
         'port': '3306',
-        'database': 'mabdd'
+        'database': 'mabdd',
+        'auth_plugin':'mysql_native_password'
     }
     return mysql.connector.connect(**config)
 
@@ -19,8 +20,8 @@ def getMysqlConnection():
 def hello():
     return "Hello world"
 
-@app.route('/all_users', methods=['GET'])
-def all_users(self):
+@app.route('/all_users', methods=['GET', 'POST'])
+def all_users():
     db = getMysqlConnection()
     try:
         users="SELECT nom, prenom from utilisateurs"
