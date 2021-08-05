@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        {% block title %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% endblock %}
+    </head>
+
+    <body>
+
+        {% block content %}
+
+        <!-- formulaire qui une fois soumis enverra les données en POST -->
+        <form action="http://localhost:5000/add_user_template/" method="post">
+            <label> id de l'utilisateur
+                <input type="text" name="id_utilisateur">
+            </label>
+
+            <label> nom 
+                <input type="text" name="nom">
+            </label>
+
+            <label> prenom 
+                <input type="text" name="prenom">
+            </label>
+
+            <label> adresse 
+                <input type="text" name="id_adresse">
+            </label>
+
+            <input type="submit" value="soumettre">
+        </form>
+        {% endblock %}
+
+    </body>
+
+</html>
